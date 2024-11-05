@@ -26,6 +26,9 @@ import userRoute from "./routes/user.js";
 import chatRoute from "./routes/chat.js";
 import adminRoute from "./routes/admin.js";
 
+import { createMessagesInAChat, createGroupChats, createSingleChats, } from "./seeders/chat.js";
+import { createUser } from "./seeders/user.js";
+
 dotenv.config({
   path: "./.env",
 });
@@ -44,6 +47,11 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+
+// createUser(10);
+// createSingleChats(10);
+// createGroupChats(10)
+// createMessagesInAChat("6729c38236448b1724fac879", 50);
 
 const app = express();
 const server = createServer(app);
